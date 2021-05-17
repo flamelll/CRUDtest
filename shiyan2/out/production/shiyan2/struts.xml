@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <package name="basicstruts2" extends="struts-default">
+
+        <action name="save" class="action.SaveAction">
+            <result name="success">/success.jsp</result>
+            <result name="error">/insert.jsp</result>
+        </action>
+        <!--查询所有学生  -->
+        <action name="showAllStudent" class="action.ShowAction" method="execute">
+            <result name="success">/list.jsp</result>
+            <result name="error">/insert.jsp</result>
+            <result name="input">/insert.jsp</result>
+        </action>
+        <!-- 删除学生 -->
+        <action name="deleteStudent" class="action.DeleteAction" method="execute">
+            <result name="success">/showAllStudent.jsp</result>
+            <result name="error">/showAllStudent.jsp</result>
+            <result name="input">/showAllStudent.jsp</result>
+        </action>
+        <!-- 查询要更新的学生信息 -->
+        <action name="updateStudent" class="action.ShowOneAction" method="execute">
+            <result name="success">/update.jsp</result>
+            <result name="error">/showAllStudent.jsp</result>
+            <result name="input">/showAllStudent.jsp</result>
+        </action>
+        <!-- 更新学生信息 -->
+        <action name="updateSaveStudent" class="action.UpdateAction" method="execute">
+            <result name="success">/showAllStudent.jsp</result>
+            <result name="error">/showAllStudent.jsp</result>
+            <result name="input">/showAllStudent.jsp</result>
+        </action>
+    </package>
+</struts>
